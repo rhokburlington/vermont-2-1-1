@@ -6,6 +6,11 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCzdylLUlVrZ2fytsRwyBXNKDuAOgVhN5M&sensor=true">
+    </script>
+
+	<script type="text/javascript" src="assets/javascripts/map-view.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="assets/stylesheets/custom.css">
 </head> 
@@ -16,7 +21,7 @@
 	<div data-role="header">
 		<a href="#" data-rel="back" data-icon="arrow-l" data-theme="a">Back</a>
 		<h1>Baby Clothing</h1>
-		<a href="#" data-role="button" data-theme="a">Map View</a>
+		<a href="#map-view" data-role="button" data-theme="a" data-transition="flip">Map View</a>
 	</div><!-- /header -->
 
 	<div data-role="content">	
@@ -56,6 +61,20 @@
 	</div><!-- /content -->
 
 </div><!-- end baby-clothing page -->
+
+
+<div data-role="page" id="map-view">
+
+	<div data-role="header">
+		<a href="#" data-rel="back" data-icon="arrow-l" data-theme="a">Back</a>
+		<h1>Map View</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<div id="map-view"></div>	
+	</div><!-- /content -->
+
+</div><!-- end map-view page -->
 
 </body>
 </html>
