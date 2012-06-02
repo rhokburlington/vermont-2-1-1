@@ -5,7 +5,22 @@
 	width: 50%;
 }
 
-#zip-code, #city, .ui-select {
-	display: inline;
-	width: 50%;
+#or {
+	float: left;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+#separator {
+	padding-bottom: 100px;
+}
+
+.ui-select {
+	margin-right: 0;
+	width: 100%;
+}
+
+#zip-code {
+	float: left;
+	width: 40%;
 }
