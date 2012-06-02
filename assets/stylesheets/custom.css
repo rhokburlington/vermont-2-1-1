@@ -1,0 +1,49 @@
+/* Override default Dashboard styles (index.html) */
+.dashboard-btn {
+	height: 150px;
+	margin: 10px auto;
+	width: 50%;
+}
+
+#or {
+	float: left;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+#separator {
+	padding-bottom: 100px;
+}
+
+.ui-select {
+	margin-right: 0;
+	width: 100%;
+}
+
+#zip-code {
+	float: left;
+	width: 40%;
+}
+
+
+/* Styles for baby-clothing.html */
+.container {
+	margin: 10px auto;
+	margin-bottom: 50px;
+	padding: 20px;
+	width: 50%;
+	/* border radius */
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	/* box shadow */
+	-moz-box-shadow: 1px 1px 15px rgba(0,0,0,0.5);
+}
+
+.even {
+	background-color: #FFF;
+}
+
+.odd {
+	background-color: #EEE;
+}
