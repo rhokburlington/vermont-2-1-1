@@ -1,0 +1,11 @@
+/* Override default Dashboard styles (index.html) */
+.dashboard-btn {
+	height: 150px;
+	margin: 10px auto;
+	width: 50%;
+}
+
+#zip-code, #city, .ui-select {
+	display: inline;
+	width: 50%;
+}

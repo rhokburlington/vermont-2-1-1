@@ -6,20 +6,32 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css">
 </head> 
 <body> 
 
-<div data-role="page">
+<div data-role="page" id="dashboard">
 
 	<div data-role="header">
-		<h1>My Title</h1>
+		<h1>Vermont 2-1-1</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>Hello world</p>		
+		<input id="zip-code" type="text" value="Enter zip code..." />
+		<select id="city">
+			<option value="">{Select City}</option>
+			<option>Adamant</option>
+			<option>Addison</option>
+			<option>Albany</option>
+		</select>
+
+		<a href="#" class="dashboard-btn" data-role="button" data-theme="b">Browse Category</a>
+		<a href="#" class="dashboard-btn" data-role="button" data-theme="b">Search by Keyword</a>
+		<a href="#" class="dashboard-btn" data-role="button" data-theme="b">Search by Name</a>		
 	</div><!-- /content -->
 
-</div><!-- /page -->
+</div><!-- end dashboard page -->
 
 </body>
 </html>
