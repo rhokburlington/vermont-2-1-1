@@ -11,7 +11,7 @@
 </head> 
 <body> 
 
-<div data-role="page" id="dashboard">
+<div data-role="page" id="browse-category">
 
 	<div data-role="header">
 		<a href="index.html" data-rel="back" data-icon="arrow-l" data-theme="a">Back</a>
@@ -19,8 +19,8 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<ul data-role="listview" data-theme="d">
-			<li><a href="#">Basic Needs</a></li>
+		<ul data-role="listview" data-theme="d" data-filter="true">
+			<li><a href="#basic-needs-sublist" data-transition="slide">Basic Needs</a></li>
 			<li><a href="#">Consumer Services</a></li>
 			<li><a href="#">Criminal Justice and Legal Services</a></li>
 			<li><a href="#">Disability Services</a></li>
@@ -39,7 +39,31 @@
 		</ul>
 	</div><!-- /content -->
 
-</div><!-- end dashboard page -->
+</div><!-- end browse-category page -->
+
+<div data-role="page" id="basic-needs-sublist">
+
+	<div data-role="header">
+		<a href="index.html" data-rel="back" data-icon="arrow-l" data-theme="a">Basic Needs</a>
+		<h1>Browse Category</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<ul data-role="listview" data-theme="d">
+			<li><a href="#">Baby Clothing</a></li>
+			<li><a href="#">Clothing Vouchers</a></li>
+			<li><a href="#">Diapers</a></li>
+			<li><a href="#">Formal Wear</a></li>
+			<li><a href="#">General Clothing Provision</a></li>
+			<li><a href="#">Household Goods</a></li>
+			<li><a href="#">Maternity Clothing</a></li>
+			<li><a href="#">Mending/Alterations Services</a></li>
+			<li><a href="#">Office Furniture</a></li>
+			<li><a href="#">Office Supplies</a></li>
+		</ul>
+	</div><!-- /content -->
+
+</div><!-- end basic-needs-sublist page -->
 
 </body>
 </html>
