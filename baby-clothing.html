@@ -1,0 +1,142 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Baby Clothing</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<script type="text/javascript"
+      src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+	<script type="text/javascript" src="assets/javascripts/map-view.js"></script>
+	<script type="text/javascript" src="assets/javascripts/get-directions.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/custom.css">
+</head> 
+<body> 
+
+<div data-role="page" id="baby-clothing">
+
+	<div data-role="header">
+		<a href="#" data-rel="back" data-icon="arrow-l" data-theme="a">Back</a>
+		<h1>Baby Clothing</h1>
+		<a id="go-map-view" href="#map-view" data-role="button" data-theme="a" data-transition="flip">Map View</a>
+	</div><!-- /header -->
+	<!--
+		- https://maps.google.com/maps?daddr=24+Opera+House+Square,+Claremont,+NH+03742
+
+		- https://maps.google.com/maps?daddr=1+Main+St,+West+Lebanon,+NH+03784
+
+		- https://maps.google.com/maps?daddr=15+Ayers+St,+Barre,+VT+05641
+	-->
+	<div data-role="content">	
+		<div class="container odd">
+			<h2>Pregnancy Center of the Upper Valley - West Lebanon Office</h2>
+			<h3>Pregnancy Center of the Upper Valley - Claremont Office</h3>
+			<a href="#individual-map" data-role="button" id="pregnancy-nh-claremont" class="address">
+				24 Opera House Square <br />
+				Moody Building <br />
+				Claremont, NH 03742 <br />
+			</a>
+			<a href="tel:60354247474" data-role="button" class="phone">(603) 542-4747 Information & Services</a>
+			<a href="tel:8003954357" data-role="button" class="phone">(800) 395-4357 After Hours National Helpline</a>
+			<p class="fax">(603) 298-6057 Fax</p>
+		</div><!-- container -->
+
+		<div class="container even">
+			<h2>Pregnancy Center of the Upper Valley - West Lebanon Office</h2>
+			<a href="#individual-map" data-role="button" id="pregnancy-nh-lebanon" data-role="button" class="address">
+				1 Main Street, Suit 2 <br />
+				West Lebanon, NH 03784
+			</a>
+			<a href="tel:6032986123" data-role="button" class="phone">(603) 298-6123 Information & Services</a>
+			<a href="tel:8003954357" data-role="button" class="phone">(800) 395-4357 After Hours National Helpline</a>
+			<p class="fax">(603) 298-6057 Fax</p>
+		</div><!-- container -->
+
+		<div class="container odd">
+			<h2>Care Net Pregnancy Center of Central Vermont</h2>
+			<a href="#individual-map" data-role="button" id="pregnancy-vt-barre" data-role="button" class="address">
+				15 Ayers Street <br />
+				Barre, VT 05641
+			</a>
+			<a href="tel:8024799215" data-role="button" class="phone">(802) 479-9215 & Services</a>
+			<a href="tel:8003954357" data-role="button" class="phone">(800) 395-4357 After Hours National Helpline</a>
+		</div><!-- container -->
+	</div><!-- /content -->
+
+</div><!-- end baby-clothing page -->
+
+
+<div data-role="page" id="map-view">
+
+	<div data-role="header">
+		<a href="#" data-rel="back" data-icon="arrow-l" data-theme="a">Back</a>
+		<h1>Map View</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<div id="map" style="width: 500px; height: 400px; margin: 0;"></div>
+
+		  <script type="text/javascript">
+		  //http://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example
+		  	var locations;
+
+		  	$("#go-map-view").click(function() {
+			    navigator.geolocation.getCurrentPosition(function(position) {
+					locations = [
+				      ['Pregnancy Center of the Upper Valley - Claremont Office', 43.3728869, -72.3381952, 3],
+				      ['Pregnancy Center of the Upper Valley - West Lebanon Office', 43.6446729, -72.3092939, 4],
+				      ['Care Net Pregnancy Center of Central Vermont', 44.190655, -72.497414, 2],
+				      ['Your location', position.coords.latitude, position.coords.longitude, 1]
+				    ];
+					
+
+
+				    var map = new google.maps.Map(document.getElementById('map'), {
+				      zoom: 7,
+				      center: new google.maps.LatLng(43.65, -72.30),
+				      mapTypeId: google.maps.MapTypeId.ROADMAP
+				    });
+
+				    var infowindow = new google.maps.InfoWindow();
+
+				    var marker, i;
+
+				    for (i = 0; i < locations.length; i++) {  
+				      marker = new google.maps.Marker({
+				        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				        map: map
+				      });
+
+				      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+				        return function() {
+				          infowindow.setContent(locations[i][0]);
+				          infowindow.open(map, marker);
+				        }
+				      })(marker, i));
+				    }
+			    });
+			});
+		  </script>
+	
+	</div><!-- /content -->
+
+</div><!-- end map-view page -->
+
+<div data-role="page" id="individual-map">
+
+	<div data-role="header">
+		<a href="#" data-rel="back" data-icon="arrow-l" data-theme="a">Back</a>
+		<h1>Directions</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div id="map-canvas" style="width: 500px; height: 400px; margin: 0;"></div>
+	</div><!-- /content -->
+
+</div><!-- end individual-map page -->
+
+</body>
+</html>
